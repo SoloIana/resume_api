@@ -1,0 +1,10 @@
+Авторизация:
+
+В запросе должен присутствовать HTTP-заголовок 'Authorization: Token <token>'. Токен нужно предварительно создать, например, командами в Django shell:
+
+>>> from django.contrib.auth.models import User
+>>> u=User.objects.get(email='<наш email>')
+>>> from rest_framework.authtoken.models import Token
+>>> Token.objects.create(user=u).key
+
+Подробнее https://www.django-rest-framework.org/api-guide/authentication/#tokenauthentication
